@@ -18,7 +18,7 @@ if ( $trip = TripFactory::getTrip( $trip_id ) )
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <title>SFCTA Bike Model Trip Viewer v0.1</title>
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
   function initialize() {
     var myLatlng = new google.maps.LatLng( 37.7733, -122.4178 );
