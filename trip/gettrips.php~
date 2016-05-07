@@ -273,7 +273,7 @@ function getTripData($trips, $startidx, $count, $type) {
 </style>
 
 <?php if ($type=="map" && $submit) { ?>
-  <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAvj5ZOIASf-08ujN3nH8hvuzduE_Nx8Mk"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAvj5ZOIASf-08ujN3nH8hvuzduE_Nx8Mk"></script>
   <script type="text/javascript">
   function initialize() {
     var myLatlng = new google.maps.LatLng(<?php print $lat_center;?>,<?php print $long_center;?>);
