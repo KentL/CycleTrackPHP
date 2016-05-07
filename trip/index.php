@@ -1,7 +1,7 @@
 <?php
 
-require_once("..\include\TripFactory.php");
-require_once("..\include\CoordFactory.php");
+require_once("../include/TripFactory.php");
+require_once("../include/CoordFactory.php");
 
 
 $trip_id = isset( $_GET['trip_id'] ) ? $_GET['trip_id'] : null; 
