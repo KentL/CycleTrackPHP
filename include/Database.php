@@ -6,15 +6,16 @@ $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 $server = $url["host"];
 $username = $url["user"];
-$password = $url["pass"];
+$password = $url["user"];
 $db = substr($url["path"], 1);
 
 abstract class DatabaseConnection extends mysqli
 {
-	
-	const USER     = 'root';
-	const PASSWORD = '';
-	const DATABASE = 'bike_model';
+	const URL=parse_url(getenv("CLEARDB_DATABASE_URL"));
+	const HOST     = URL["host"];
+	const USER     = URL["user"];
+	const PASSWORD = URL["pass"];
+	const DATABASE =  substr(URL["path"], 1);
 
 	public function __construct( $host, $user, $password, $database )
 	{
@@ -35,11 +36,11 @@ abstract class DatabaseConnection extends mysqli
 
 class LocalDatabaseConnection extends DatabaseConnection 
 {
-	const HOST     = 'localhost';
+	
 
 	public function __construct()
 	{
-		parent::__construct( $server, $username, $password, $db  );
+		parent::__construct( self::HOST, self::USER, self::PASSWORD, self::DATABASE );
 	}
 }
 
