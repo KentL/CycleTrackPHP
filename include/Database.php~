@@ -39,7 +39,7 @@ class LocalDatabaseConnection extends DatabaseConnection
 
 	public function __construct()
 	{
-		parent::__construct( $server, $username, $password, $db  );
+		parent::__construct( self::HOST, self::USER, self::PASSWORD, self::DATABASE );
 	}
 }
 
