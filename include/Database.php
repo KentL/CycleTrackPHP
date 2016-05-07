@@ -11,12 +11,7 @@ $db = substr($url["path"], 1);
 
 abstract class DatabaseConnection extends mysqli
 {
-	$url=parse_url(getenv("CLEARDB_DATABASE_URL"));
-	$host    = url["host"];
-	$user     = url["user"];
-	$password = url["pass"];
-	$database  =  substr(url["path"], 1);
-
+	
 	public function __construct( $host, $user, $password, $database )
 	{
 		parent::__construct( $host, $user, $password, $database );
@@ -40,7 +35,13 @@ class LocalDatabaseConnection extends DatabaseConnection
 
 	public function __construct()
 	{
-		parent::__construct( self::$host, self::$user, self::$password , self::$database );
+		$url=parse_url(getenv("CLEARDB_DATABASE_URL"));
+		$host    = url["host"];
+		$user     = url["user"];
+		$password = url["pass"];
+		$database  =  substr(url["path"], 1);
+
+		parent::__construct( $host, $user, $password , $database );
 	}
 }
 
