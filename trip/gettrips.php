@@ -1,7 +1,7 @@
 <?php
 
-require_once("..\include\TripFactory.php");
-require_once("..\include\CoordFactory.php");
+require_once("../include/TripFactory.php");
+require_once("../include/CoordFactory.php");
 
 // arg processing
 $where        = isset($_GET['where']) ? $_GET['where'] : '';
