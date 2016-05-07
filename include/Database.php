@@ -36,12 +36,12 @@ class LocalDatabaseConnection extends DatabaseConnection
 	public function __construct()
 	{
 		$url=parse_url(getenv("CLEARDB_DATABASE_URL"));
-		$host    = url["host"];
-		$user     = url["user"];
-		$password = url["pass"];
-		$database  =  substr(url["path"], 1);
+		$host    = $url["host"];
+		$user     = $url["user"];
+		$password = $url["pass"];
+		$database  =  substr($url["path"], 1);
 
-		parent::__construct( $url, $url, $url ,$database );
+		parent::__construct( $host, $user, $password ,$database );
 	}
 }
 
