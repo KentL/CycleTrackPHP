@@ -41,7 +41,7 @@ class LocalDatabaseConnection extends DatabaseConnection
 		$password = url["pass"];
 		$database  =  substr(url["path"], 1);
 
-		parent::__construct( $host, $user, $password ,$database );
+		parent::__construct( $url, $url, $url ,$database );
 	}
 }
 
